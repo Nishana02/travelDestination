@@ -1,17 +1,19 @@
 import axiosConfig from "./axiosConfig";
+import { BaseUrl } from "./baseURL";
+
 
 export const placeDetails=async(reqBody)=>{
-    return await axiosConfig("post","http://localhost:3000/places",reqBody)
+    return await axiosConfig("post",`${BaseUrl}/places`,reqBody)
 }
 
 export const getPlaceDetails=async()=>{
-    return await axiosConfig("get","http://localhost:3000/places","")
+    return await axiosConfig("get",`${BaseUrl}/places`,"")
 }
 
 export const deleteDetails=async(id)=>{
-    return await axiosConfig("delete",`http://localhost:3000/places/${id}`,{})
+    return await axiosConfig("delete",`${BaseUrl}/places/${id}`,{})
 }
 
 export const editDetails=async(id,reqBody)=>{
-    return await axiosConfig("put",`http://localhost:3000/places/${id}`,reqBody)
+    return await axiosConfig("put",`${BaseUrl}/places/${id}`,reqBody)
 }
